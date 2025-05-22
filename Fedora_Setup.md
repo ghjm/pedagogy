@@ -1,9 +1,18 @@
-* Boot from Fedora 42 Server USB device
-	* If it fails to boot, you might need to disable Secure Boot:
-		* Press Del repeatedly while powering on to get to BIOS Setup menu
-		* Go to Security - Secure Boot and disable it
+* Unbox and power on the mini PC
+    * connect it to power, a monitor, a keyboard, and optionally a mouse
+    * Plug in a bootable USB flash drive with Fedora 42 Server
+    * Press the power button, and at the same time, start repeatedly hitting `<Del>` on the keyboard
+    * The system should boot up to the firmware menu; at this point you can stop hitting `<Del>`
+    * Use the mouse or arrow keys to navigate to "BBS Menu"
+    * From the BBS Menu, use the mouse or arrow keys to navigate to the USB device
+    * Hit `<Enter>` to boot from the USB device
+	* If it fails to boot with a security error, you might need to disable Secure Boot:
+		* From the firmware menu, go to Setup, then Security, then Secure Boot
+		* Change the Secure Boot setting to Disabled
 		* Save and exit
-	* Choose "Test this media and start" the first time you use a new USB device, then just regular "start" afterwards
+	* From the Grub boot screen "Test this media and start" is the default
+        * Allow it to do this the first time you use a new USB device, or if you suspect the USB is corrupted
+        * On subsequent uses, you can skip this check by using the arrow keys to go to regular "start"
 
 * Fedora Setup:
 	* Network & Hostname
