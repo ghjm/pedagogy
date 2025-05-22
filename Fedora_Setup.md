@@ -1,3 +1,7 @@
+[Back to Top](README.md)
+
+## Initial Fedora Setup
+
 * Unbox and power on the mini PC
     * connect it to power, a monitor, a keyboard, and optionally a mouse
     * Plug in a bootable USB flash drive with Fedora 42 Server
