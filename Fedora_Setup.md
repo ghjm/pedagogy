@@ -27,8 +27,11 @@
 
 * Initial setup after reboot:
 	* Log in using the username and password you chose
-	* Run `ifconfig` and check that the wlan device is up and has a 10.1.1.* IPv4 address
-		* If it does not, stop here and troubleshoot the wifi before continuing
+	* Check that network connectivity is working
+        * Run `ifconfig` and check that the wlan device is up and has a valid address on the local network
+        * Run `ping 8.8.8.8` and verify that packets are exchanged.  Hit `<Ctrl+C>` to stop.
+        * Run `ping google.com` and verify that packets are exchanged (this tests DNS resolution).  Hit `<Ctrl+C>` to stop.
+		* If network connectivity isn't working, stop here and troubleshoot before continuing
 	* Configure passwordless sudo
 		* `sudo visudo`
 		* Sudo will prompt for your password
@@ -55,9 +58,10 @@
 			* Type `:wq<Enter>` to save and exit
 		* Run `sudo systemctl restart systemd-resolved` to restart the systemd-resolved service
 		* Run `ping [hostname].local` to test pinging by name.  If it works, you should see 64 byte packets.  Hit `<Ctrl+C>` to stop.
-		* From another machine on the network, try `ping [hostname].local`
+		* From some other Linux box on the same LAN, do `ping [hostname].local` to make sure MDNS is working remotely.
 	* Configure ssh keys
-		* On your main Linux box, you should already have an ssh key
+        * These steps are done from your main Linux box, not from the new box
+		* You should already have an ssh key
 			* Run `ls -la ~/.ssh` to check
 			* Personal ssh keys are two files named `id_*` and `id_*.pub` (where `*` can be `rsa`, `ed25519` or a few others)
 			* The `id_*.pub` file is the public key, which can be shared; the `id_*` file is the private key, which must be kept secret
