@@ -63,7 +63,7 @@
 	* Run `hostnamectl` and verify that the static hostname is what you entered during setup
 		* If it isn't, then run `hostnamectl hostname [hostname]` to change it (replace `[hostname]` with what you want the hostname to be)
 	* Run `sudo mkdir -p /etc/systemd/resolved.conf.d` to create this directory
-	* Run `sudo vim /etc/system/resolved.conf.d/50-mdns.conf` to open this file in vim
+	* Run `sudo vim /etc/systemd/resolved.conf.d/50-mdns.conf` to open this file in vim
 	* Edit the file:
 		* Hit `i` to go into vim insert mode
 		* Type `[Resolve]` and hit `<Enter>`
