@@ -71,7 +71,10 @@
 		* Hit `<Esc>` to go back to vim normal mode
 		* Type `:wq<Enter>` to save and exit
 	* Run `sudo systemctl restart systemd-resolved` to restart the systemd-resolved service
-	* Run `ping [hostname].local` to test pinging by name.  If it works, you should see 64 byte packets.  Hit `<Ctrl+C>` to stop.
+    * Allow incoming multicast DNS requests through the local firewall:
+        * Run `sudo firewall-cmd --permanent --add-service=mdns`
+        * Run `sudo firewall-cmd --reload`
+	* Run `ping [hostname].local` to test pinging by name locally.  If it works, you should see 64 byte packets.  Hit `<Ctrl+C>` to stop.
 	* From some other Linux box on the same LAN, do `ping [hostname].local` to make sure MDNS is working remotely.
 * Configure ssh keys
     * These steps are done from your main Linux box, not from the new box
