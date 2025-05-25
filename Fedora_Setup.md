@@ -95,7 +95,7 @@
 * Run `podman run -it alpine sh`
     * You might get messages about pulling the alpine imag from docker.io, and should then get a root prompt `/ #`
     * Run `cat /etc/os-release` and verify that it shows as Alpine Linux (not Fedora)
-    * Run `exit` or hit `<Ctrl+D` to exit
+    * Run `exit` or hit `<Ctrl+D>` to exit
     * Run `podman ps -a` and verify the alpine container exists and shows a status of "Exited"
     * Run `podman rm [id]` where `[id]` is the first few characters of the ID shown from the previous command
     * Run `podman ps -a` again and verify the list is now empty
