@@ -92,8 +92,8 @@
 
 ### Verify correct operation of podman
 * Either log in at the local console or ssh to the new machine
-* Run `podman run -it --rm alpine sh`
-    * You should get messages about pulling the alpine imag from docker.io, followed by a root prompt `/ #`
+* Run `podman run -it alpine sh`
+    * You might get messages about pulling the alpine imag from docker.io, and should then get a root prompt `/ #`
     * Run `cat /etc/os-release` and verify that it shows as Alpine Linux (not Fedora)
     * Run `exit` or hit `<Ctrl+D` to exit
     * Run `podman ps -a` and verify the alpine container exists and shows a status of "Exited"
